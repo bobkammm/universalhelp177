@@ -1,0 +1,48 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robojini/Tuturial_UI_Library/main/UI_Template_1"))()
+--[[
+local colors = {
+    SchemeColor = Color3.fromRGB(150, 72, 148),
+	Background = Color3.fromRGB(15,15,15),
+    Header = Color3.fromRGB(15,15,15),
+	TextColor = Color3.fromRGB(255,255,255),
+    ElementColor = Color3.fromRGB(20, 20, 20)
+}
+]]
+local Window = Library.CreateLib("UniversalHelp by Kzerix", "RJTheme3")
+
+-- Секция
+local Tab = Window:NewTab("Main")
+
+-- Подсекция
+local Section = Tab:NewSection("Player")
+
+-- Кнопка
+Section:NewButton("Reset", "Reset the player", function()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+-- Слайдер
+Section:NewSlider("Speed", "Speed of the player", 256, 1, function(s) -- 500 (Макс. значение) | 0 (Мин. значение)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+-- Слайдер
+Section:NewSlider("JumpPower", "Jump of the player", 256, 1, function(s) -- 500 (Макс. значение) | 0 (Мин. значение)
+    game.Players.LocalPlayer.Character.Humanoid.JumpHeight = s
+end)
+
+--Секция
+local Section = Tab:NewSection("Debug")
+-- Текст Бокс
+
+Section:NewTextBox("Print", "Print the text", function(txt)
+	print(txt)
+end)
+
+-- Кнопка
+Section:NewButton("Kick", "Kick the player", function()
+    game.Players.LocalPlayer:Kick("You are kicked!")
+end)
+
+-- Секция
+local Tab = Window:NewTab("Teleport")
