@@ -11,6 +11,17 @@ local colors = {
 local Window = Library.CreateLib("UniversalHelp by Kzerix", "RJTheme3")
 
 -- Секция
+local Tab = Window:NewTab("Info")
+
+-- Подсекция
+local Section = Tab:NewSection("discord.gg/???????")
+
+-- Кнопка
+Section:NewButton("Copy link", "Copy the link", function()
+    print("Coppied!")
+end)
+
+-- Секция
 local Tab = Window:NewTab("Main")
 
 -- Подсекция
