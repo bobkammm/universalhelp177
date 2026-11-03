@@ -46,3 +46,6 @@ end)
 
 -- Секция
 local Tab = Window:NewTab("Teleport")
+
+-- Подсекция
+local Section = Tab:NewSection("Teleport isn't working now")
