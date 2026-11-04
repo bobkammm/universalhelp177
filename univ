@@ -47,6 +47,10 @@ Section:NewSlider("JumpPower", "Jump of the player", 256, 1, function(s) -- 500 
         game.Players.LocalPlayer.Character.Humanoid.JumpHeight = s
 end)
 
+Section:NewButton("Fly", "Fly", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+end)
+
 local Section = Tab:NewSection("ESP")
 
 Section:NewButton("Toggle ESP", "Toggle the ESP", function()
